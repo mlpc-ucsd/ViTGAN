@@ -1,0 +1,6 @@
+# penalty.py
+options.lbd = 1.
+options.lbd2 = 1.
+
+# warmup
+options.warmup = 3000
