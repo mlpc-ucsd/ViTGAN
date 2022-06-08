@@ -20,7 +20,7 @@ Recently, Vision Transformers (ViTs) have shown competitive performance on image
 This is a **PyTorch reproduction** of the orignal ViTGAN code (which was orignally written in Tensorflow 2 to run on Google Cloud TPUs) by the authors. Due to the subtle differences between Tensorflow 2 and PyTorch implementations, we had to make modifications to hyperparameters such as learning rate and coefficient for R1 and bCR penalties. Currently, we only implement StyleGAN2-D+ViTGAN-G, which is the most performant variant. In addition to the original generator architecture which used Implicit Neural Representation for patch generation, we provide the generator architecture that employs convolutional blocks for patch generation. **In practice, we recommend using convolutional patch generation as it brings faster convergence (in terms of both wall clock time and the number of iterations).**
 
 ### Running Training
-1. To train StyleGAN2-D+StyleGAN2-G (**Convolutional Network for Patch Generation**) on CIFAR-10 benchmark:
+1. To train StyleGAN2-D+StyleGAN2-G on CIFAR-10 benchmark:
     ```bash
     python train_stylegan2.py configs/gan/stylegan2/c10_style64.gin stylegan2 --mode=aug_both --aug=diffaug --lbd_r1=0.1 --no_lazy --halflife_k=1000 --penalty=bcr --use_warmup
     ```
